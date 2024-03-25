@@ -1,0 +1,8 @@
+git command ->for develop create-Feacture branch use->git checkout -b "urlhashting"
+git->git pull origin develop
+git->git add.
+git commit -m "add urls"
+git pull origin urlhashting
+git push origin urlhashting
+
+rasied PR againts bigbucket

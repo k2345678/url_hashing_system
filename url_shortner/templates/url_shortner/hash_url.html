@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Hashing System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h1>URL Hashing System</h1>
+    <div class="container mt-5">
+        {% if error_message %}
+        <div class="alert alert-danger">
+            {{ error_message }}
+        </div>
+        {% endif %}
+    <form action="{% url 'hash_url' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="original_url">Enter Your URL:</label>
+        <input type="text" class="form-control" id="original_url" name="original_url" required>
+        </div>
+         <button class="btn btn-primary" type="submit">Generate Hashed URL</button>
+    </form>
+</div>
+
+     {% if hashed_url %}
+        <<p>Hashed URL: <a class="btn btn-success" href="{% url 'redirect_to_original' hashed_url %}">{{ hashed_url }}</a></p>
+    {% endif %}
+
+</body>
+</html>
