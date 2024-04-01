@@ -7,7 +7,6 @@ import hashlib
 # Create your views here.
 def hash_url(request):
     error_message = None
-
     if request.method == 'POST':
         original_url = request.POST.get('original_url')
         hashed_url = hashlib.sha256(original_url.encode()).hexdigest()[:10]
