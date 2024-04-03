@@ -1,10 +1,8 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from .models import URL
-from django.http import JsonResponse
 from django.db import IntegrityError
 import hashlib
 
-# Create your views here.
 def hash_url(request):
     error_message = None
     if request.method == 'POST':
