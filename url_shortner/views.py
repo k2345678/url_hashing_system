@@ -4,18 +4,6 @@ from .forms import URLForm
 from django.db import IntegrityError
 import hashlib
 
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import URL
-from .forms import URLForm
-from django.db import IntegrityError
-import hashlib
-
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import URL
-from .forms import URLForm
-from django.db import IntegrityError
-import hashlib
-
 def hash_url(request):
     if request.method == 'POST':
         form = URLForm(request.POST)
