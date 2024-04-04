@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Hashing System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 
 </head>
 <body>
     <h1>URL Hashing System</h1>
     <div class="container mt-5">
-        {% if error_message %}
-        <div class="alert alert-danger">
-            {{ error_message }}
-        </div>
-        {% endif %}
     <form action="{% url 'hash_url' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -27,6 +23,10 @@
 
      {% if hashed_url %}
 </br><p>Hashed URL: <a class="btn btn-success" href="{% url 'redirect_to_original' hashed_url %}">{{ hashed_url }}</a></p>
+    {% endif %}
+
+    {% if error_message %}
+    <p>{{ error_message }}</p>
     {% endif %}
 
 </body>
